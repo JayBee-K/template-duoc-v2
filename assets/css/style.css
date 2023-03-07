@@ -1428,13 +1428,13 @@
 		padding-left: 0;
 	}
 
-	.footer .footer-item .footer-title{
+	.footer .footer-item .footer-title {
 		font-size: 1.1em;
 	}
 
 	.footer .footer-item .footer-text,
 	.footer .footer-item .footer-list > a,
-	.footer .footer-item .footer-subtext{
+	.footer .footer-item .footer-subtext {
 		font-size: 1em;
 	}
 }
@@ -1450,62 +1450,25 @@
 .procedure-grid {
 	position: relative;
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 	gap: 30px;
-}
-
-.procedure-grid:before {
-	position: absolute;
-	width: 4px;
-	height: calc(100% - 30px);
-	top: 50%;
-	left: 50%;
-	display: block;
-	content: "";
-	background: var(--bs-white);
-	transform: translate(-50%, -50%);
 }
 
 .procedure-grid .procedure-item {
 	position: relative;
-}
-
-.procedure-grid .procedure-item .procedure-item_circle {
-	position: absolute;
-	background: #f2f2f2;
-	height: 40px;
-	width: 40px;
+	background: var(--bs-white);
+	border-radius: 5px;
+	width: calc(50% - 30px);
+	padding: 20px;
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	border-radius: 50%;
-	color: var(--primary-color);
-	font-size: 1.35em;
-	font-weight: 700;
-	box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgb(0 0 0 / 8%), 0 3px 0 4px rgb(0 0 0 / 5%);
-	top: 15px;
-	left: 50%;
-	transform: translateX(-50%);
+	gap: 15px;
 }
 
 .procedure-grid .procedure-item .procedure-item_content {
-	background: var(--bs-white);
-	border-radius: 5px;
-	width: calc(50% - 50px);
-	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 	position: relative;
-}
-
-.procedure-grid .procedure-item .procedure-item_content:before {
-	position: absolute;
-	content: "";
-	height: 15px;
-	width: 15px;
-	background: var(--bs-white);
-	top: 28px;
-	z-index: 1;
-	transform: rotate(45deg);
 }
 
 .procedure-grid .procedure-item .procedure-item_content .procedure-item_title {
@@ -1513,7 +1476,6 @@
 	color: var(--bs-gray-1000);
 	font-weight: 700;
 	transition: var(--transition-default);
-	margin-bottom: 9px;
 	text-transform: uppercase;
 }
 
@@ -1532,20 +1494,22 @@
 	margin-bottom: 0;
 }
 
-.procedure-grid .procedure-item .procedure-item_image {
+.procedure-grid .procedure-item .procedure-item_content .procedure-item_number {
+	opacity: .35;
 	position: absolute;
-	top: 50%;
-	transform: translateY(-50%) translateX(-50%);
-	z-index: 2;
-	text-align: center;
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	background: var(--bs-white);
-	padding: 15px;
+	top: -25px;
+	right: -10px;
+	font-size: 4em;
+	color: var(--bs-gray-500);
+	font-weight: 900;
+	pointer-events: none;
+}
+
+.procedure-grid .procedure-item .procedure-item_image {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-shrink: 0;
 }
 
 .procedure-grid .procedure-item .procedure-item_image img {
@@ -1553,78 +1517,24 @@
 	height: 90px;
 }
 
-.procedure-grid .procedure-item.procedure-item_left .procedure-item_content:before {
-	right: -7.5px;
-}
-
-.procedure-grid .procedure-item.procedure-item_left .procedure-item_image {
-	left: calc(50% + 150px)
-}
-
-.procedure-grid .procedure-item.procedure-item_right .procedure-item_content:before {
-	left: -7.5px;
-}
-
-.procedure-grid .procedure-item.procedure-item_right .procedure-item_image {
-	left: calc(50% - 150px)
-}
-
-.procedure-grid .procedure-item.procedure-item_right .procedure-item_content {
-	margin-left: auto;
-}
-
 @media screen and (max-width: 991px) {
-	.procedure-grid:before {
-		display: none;
-	}
-
 	.procedure-grid .procedure-item {
-		margin-top: 20px;
 		display: flex;
-		flex-direction: column;
-	}
-
-	.procedure-grid .procedure-item .procedure-item_circle {
-		top: 160px;
-		order: 2;
-		display: none;
-	}
-
-	.procedure-grid .procedure-item .procedure-item_content {
 		width: 100%;
-		order: 3;
-	}
-
-	.procedure-grid .procedure-item .procedure-item_content:before {
-		right: unset !important;
-		top: -7.5px;
-		left: 50% !important;
-		transform: translateX(-50%) rotate(45deg);
+		flex-direction: column;
+		text-align: center;
 	}
 
 	.procedure-grid .procedure-item .procedure-item_content .procedure-item_title {
-		font-size: 1.2em;
+		font-size: 1.3em;
 	}
 
 	.procedure-grid .procedure-item .procedure-item_content .procedure-item_desc {
 		font-size: 1em;
 	}
 
-	.procedure-grid .procedure-item .procedure-item_image {
-		position: static;
-		order: 1;
-		margin: 0 auto 20px;
-		transform: unset;
-	}
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-	.procedure-grid {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-
-	.procedure-grid .procedure-item {
-		width: calc(50% - 30px);
+	.procedure-grid .procedure-item .procedure-item_content .procedure-item_number {
+		top: unset;
+		bottom: -25px;
 	}
 }
