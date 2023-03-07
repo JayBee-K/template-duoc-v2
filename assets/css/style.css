@@ -1298,9 +1298,8 @@
 	color: var(--primary-color);
 }
 
-
 .product-card .card-body .card-button {
-	margin-top: 15px;
+	margin-top: auto;
 }
 
 @media screen and (max-width: 1024px) {
