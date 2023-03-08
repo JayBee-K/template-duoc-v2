@@ -1310,9 +1310,9 @@
 .product-card .card-body .card-button .button-theme {
 	width: 100%;
 	border-radius: 6px;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	font-size: 1.05em;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 1em;
 }
 
 @media screen and (max-width: 1024px) {
