@@ -144,6 +144,8 @@
 		handleToggleSearch();
 		$(window).resize(() => {
 			windowWidth = $(window).width();
+			handleStickyHeader();
+			handleNavigationMobile();
 		});
 	});
 })(jQuery);
