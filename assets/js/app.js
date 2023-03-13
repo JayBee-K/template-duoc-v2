@@ -134,6 +134,20 @@
 			header_search.toggleClass('header-search_show');
 		});
 	}
+	const handleInitFancyBoxArticle = () => {
+		const imgList = $('#article-detail_content img');
+		if (imgList.length > 0) {
+			imgList.each((index, elm) => {
+				$(elm).wrap(`<a style="cursor: zoom-in" href="${$(elm).attr('src')}" data-caption="${$(elm).attr('alt')}" data-fancybox="images"></a>`);
+			});
+
+			$('[data-fancybox="images"]').fancybox({
+				thumbs: {
+					autoStart: true,
+				},
+			});
+		}
+	}
 
 	$(function () {
 		handleStickyHeader();
@@ -147,5 +161,7 @@
 			handleStickyHeader();
 			handleNavigationMobile();
 		});
+
+		handleInitFancyBoxArticle();
 	});
 })(jQuery);
