@@ -2488,8 +2488,6 @@
 	.timeline-item .timeline-item_content .timeline-item_title {
 		font-size: 1.25em;
 	}
-
-
 }
 
 .contact-item {
@@ -2537,4 +2535,39 @@
 .contact-item:hover {
 	border-bottom: 4px solid var(--primary-color);
 	transform: translateY(-4px);
+}
+
+.contact-bottom .section-heading .heading-title {
+	font-size: 2em;
+}
+
+.contact-bottom .contact-form .form-floating label {
+	line-height: 1.5;
+}
+
+.contact-bottom .contact-form .form-floating textarea.form-control {
+	height: calc(7rem + 2px);
+}
+
+.contact-bottom .contact-form .button-theme_2 {
+	width: auto;
+	height: 44px;
+	font-size: 1.1em;
+}
+
+.contact-bottom .contact-form .button-theme_2 > .button-theme_2--icon {
+	height: 100%;
+	font-size: 1.2em;
+	width: 55px;
+}
+
+.contact-bottom .contact-form .button-theme_2 > .button-theme_2--text {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+@media screen and (max-width: 991px) {
+	.contact-bottom .section-heading .heading-title {
+		font-size: 1.6em;
+	}
 }
