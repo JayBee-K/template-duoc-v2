@@ -254,6 +254,24 @@
 			});
 		}
 	};
+	const handleSliderProductFeature = function () {
+		if ($('#slider-feature').length) {
+			new Swiper('#slider-feature > .swiper', {
+				slidesPerView: 1,
+				spaceBetween: 15,
+				speed: 1000,
+				pagination: {
+					el: '#slider-feature  .swiper-pagination',
+					clickable: 1,
+				},
+				loop: true,
+				autoplay: {
+					delay: 2000,
+					disableOnInteraction: false,
+				},
+			});
+		}
+	};
 
 	let [timelineNumber, timelineContent] = [];
 	let handleSlideTimeline = function () {
@@ -307,6 +325,7 @@
 		handleSlideProduct();
 		handleInitFancyBoxProduct();
 		handleSliderProductRelated();
+		handleSliderProductFeature();
 		handleSlideTimeline();
 	});
 })(jQuery);
