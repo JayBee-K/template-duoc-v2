@@ -295,6 +295,7 @@
 			thumbs: {
 				swiper: timelineNumber,
 			},
+			autoHeight: true, //enable auto height
 			slidesPerView: 1,
 			navigation: {
 				nextEl: '#timeline-content .swiper-actions_next',
